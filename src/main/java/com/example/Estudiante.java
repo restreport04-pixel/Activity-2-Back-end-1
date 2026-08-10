@@ -7,27 +7,54 @@ public class Estudiante {
     private double promedio;
 
 
-    public Estudiante(String nombre, int edad, double promedio) {
+    public Estudiante() {
+        this.nombre = "Sin nombre";
+        this.edad = 0;
+        this.promedio = 0.0;
+    }
+
+    public Estudiante(String nombre, int edad, double promedio){
         this.nombre = nombre;
-        setEdad(edad); // Usamos el setter para validar la edad desde el inicio
+        setEdad(edad);
         this.promedio = promedio;
     }
 
-    // Setter con validación
-    public void setEdad(int edad) {
-        if (edad>0)
+    public String getNombre(){
+        return nombre;
+    }
+
+    public void setNombre(String nombre){
+        this.nombre = nombre;
+    }
+
+    public int getEdad(){
+        return edad;
+    }
+
+    public void setEdad(int edad){
+        if (edad > 0)
         {
             this.edad = edad;
         }
     }
 
-    // Método que devuelve un BOOLEAN (true o false)
+    public double getPromedio(){
+        return promedio;
+    }
+
+    public void setPromedio(double promedio){
+        this.promedio = promedio;
+    }
+
     public boolean haAprobado() {
-        return promedio >= 3.0; // Devuelve true si sacó 3 o más
+        return promedio >= 3.0;
     }
 
     public void mostrarInfo() {
         String estado = haAprobado() ? "APROBADO" : "REPROBADO";
-        System.out.println("Estudiante: " + nombre + " | Promedio: " + promedio + " | Estado: " + estado);
+        System.out.println("Estudiante: " + nombre + " | Edad: " + edad + " | Promedio: " + promedio + " | Estado: " + estado);
     }
+
 }
+
+    
