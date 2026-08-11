@@ -6,12 +6,18 @@ public class Main {
         Libro l1 = new Libro();
         l1.mostrarDetalles();
 
-        Libro l2 = new Libro("Harry Potter","J.K. Rowling");
+        Libro l2 = new Libro("Harry Potter", "J.K. Rowling");
         l2.mostrarDetalles();
 
-        Libro l3 = new Libro("El Señor de los Anillos","J.R.R. Tolkien",1200 );
+        Libro l3 = new Libro("El Señor de los Anillos", "J.R.R. Tolkien", 1200);
         l3.mostrarDetalles();
 
+        CuentaBancaria cuenta = new CuentaBancaria("Maria", 500);
+        cuenta.depositar(200);
+        System.out.println(cuenta.getSaldo()); 
+        cuenta.retirar(1000); 
 
+        Estudiante e = new Estudiante("Pedro", 21, 2.5);
+        e.mostrarInfo(); 
     }
 }

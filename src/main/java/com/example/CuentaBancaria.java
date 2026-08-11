@@ -5,10 +5,9 @@ public class CuentaBancaria {
     private String titular;
     private double saldo;
 
-    // Constructor con validación
     public CuentaBancaria(String titular, double saldoInicial){
         this.titular = titular;
-        // Si intentan crear la cuenta con saldo negativo, la ponemos en 0
+  
         if (saldoInicial<0)
         {
             this.saldo = 0;
@@ -19,7 +18,7 @@ public class CuentaBancaria {
         }
     }
 
-    // GETTERS Y SETTERS (Ventanillas de acceso)
+    
     public String getTitular(){
         return titular;
     }
@@ -28,12 +27,10 @@ public class CuentaBancaria {
         this.titular = titular;
     }
 
-    // Solo Getter para el saldo (Nadie puede hacer cuenta.saldo = 1000000)
     public double getSaldo(){
         return saldo;
     }
 
-    // MÉTODO DEPOSITAR
     public void depositar(double cantidad) {
         if (cantidad>0)
         {
@@ -41,7 +38,6 @@ public class CuentaBancaria {
         }
     }
 
-    // MÉTODO RETIRAR con lógica de seguridad
     public void retirar(double cantidad) {
         if (cantidad>0 && cantidad<=saldo)
         {
